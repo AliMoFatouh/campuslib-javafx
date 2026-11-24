@@ -19,6 +19,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         
 	databaseManager = DatabaseManager.getInstance();	
+        SeedDataInitializer.seedIfEmpty();
 
 	 FXMLLoader loader = new FXMLLoader(
                 Objects.requireNonNull(
