@@ -129,6 +129,11 @@ public class MainController {
 
         Parent page = loader.load();
 
+       Object pageController = loader.getController();
+       if (pageController instanceof BookTableController books) {
+           books.setAdmin("ADMIN".equals(demoRole));
+       }
+
         if ("DashboardView.fxml".equals(filename)) {
             Label dashboardTitle =
                     (Label) loader.getNamespace().get("dashboardTitle");
